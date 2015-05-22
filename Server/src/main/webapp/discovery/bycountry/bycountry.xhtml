@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+<!---->
+<!--xmlns:composite="http://java.sun.com/jsf/composite"-->
+
+<head>
+
+    <meta http-equiv="content-type" content="text/html;charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <link rel="stylesheet" href="../../css/bootstrap.css" type="text/css"/>
+    <link rel="stylesheet" href="../../css/ui.css" type="text/css"/>
+    <link rel="stylesheet" href="../../css/jquery-ui-1.10.1.css" type="text/css"/>
+
+    <title>oxProxy - Countries</title>
+</head>
+<body>
+    <br/>
+    <br/>
+
+    <div class="container">
+        <br/>
+        <br/>
+
+        <h2>
+            <h:outputText value="Please select Authorization Server location"/>
+        </h2>
+        <br/>
+        <h:form>
+            <h:commandLink action="#{discovery.showPage}" value="United States (US)">
+                <f:param name="currentStep" value="1"/>
+                <f:param name="country" value="US" />
+            </h:commandLink>
+            <br/>
+            <h:commandLink action="#{discovery.showPage}" value="Ukraine (UA)">
+                <f:param name="currentStep" value="1"/>
+                <f:param name="country" value="UA" />
+            </h:commandLink>
+            <br/>
+            <h:commandLink action="#{discovery.showPage}" value="Great Britain (GB)">
+                <f:param name="currentStep" value="1"/>
+                <f:param name="country" value="GB" />
+            </h:commandLink>
+            <br/>
+        </h:form>
+        <br/>
+    </div>
+
+    <!-- Bootstrap core JavaScript -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../../js/jquery-1.10.2.min.js"></script>
+    <script src="../../js/bootstrap.js"></script>
+
+</body>
+</html>

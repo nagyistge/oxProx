@@ -1,0 +1,84 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="oxProx" parallel="tests">
+
+    <parameter name="opDomain" value="seed.gluu.org"/>
+    <parameter name="oxProxDomain" value="seed.gluu.org"/>
+    <parameter name="clientId" value="@!1111!1001!0000!0001"/>
+    <parameter name="scope" value="openid profile myaddress email"/>
+    <parameter name="opClientId" value="@!1111!0008!FF81!2D40"/>
+
+    <!-- GLUU: seed.gluu.org Test-->
+    <parameter name="swdResource" value="acct:mike@seed.gluu.org"/>
+    <parameter name="federationMetadataId" value="@!1111!0008!00F1!0001"/>
+    <parameter name="realUserId" value="mike"/>
+    <parameter name="realUserSecret" value="secret"/>
+    <parameter name="realClientId" value="@!1111!0008!FF81!2D39"/>
+    <parameter name="realClientSecret" value="6213e9b9-c46d-4008-8af1-03f918a8ade4"/>
+    <parameter name="realRedirectUri" value="https://seed.gluu.org/oxauth-rp/home.seam"/>
+    <parameter name="realRedirectUris" value="https://seed.gluu.org/oxauth-rp/home.seam https://client.example.com/cb https://client.example.com/cb1 https://client.example.com/cb2"/>
+    <parameter name="postLogoutRedirectUri" value="https://client.example.com/pl"/>
+    <parameter name="hostnameVerifier" value="default"/>
+    <parameter name="sectorIdentifierUri" value="https://seed.gluu.org/oxauth-client/test/resources/sector_identifier.js"/>
+    <parameter name="federationRpDisplayName" value="Federation RP Test display name"/>
+    <parameter name="federationRpRedirectUri" value="https://client.example.com/cb?foo=bar"/>
+    <parameter name="federationRpRedirectUris" value="https://client.example.com/cb?foo=bar https://client.example.com/cb1?foo=bar"/>
+    <parameter name="federationOpDisplayName" value="Federation OP Test display name"/>
+    <parameter name="federationOpId" value="http://example.com/op1"/>
+    <parameter name="federationOpDomain" value="example.com"/>
+
+    <!-- WS tests -->
+    <test name="Authorization WS" enabled="true">
+        <classes>
+            <class name="org.ox.oxprox.ws.AuthorizationWSTest"/>
+        </classes>
+    </test>
+    <test name="Discovery WS" enabled="true">
+        <classes>
+            <class name="org.ox.oxprox.ws.DiscoveryWSTest"/>
+        </classes>
+    </test>
+    <test name="UserInfo WS" enabled="false">
+        <classes>
+            <class name="org.ox.oxprox.ws.UserInfoWSTest"/>
+        </classes>
+    </test>
+
+    <!-- Service tests -->
+    <test name="Fragment parser test" enabled="true">
+        <classes>
+            <class name="org.ox.oxprox.FragmentParserTest"/>
+        </classes>
+    </test>
+
+    <test name="Inum Service test" enabled="true">
+        <classes>
+            <class name="org.ox.oxprox.InumServiceTest"/>
+        </classes>
+    </test>
+
+    <test name="Script Service test" enabled="true">
+        <classes>
+            <class name="org.ox.oxprox.ScriptServiceTest"/>
+        </classes>
+    </test>
+
+    <!-- Client tests -->
+    <test name="Authorization code flow client test" enabled="false">
+        <classes>
+            <class name="org.ox.oxprox.client.AuthorizationCodeFlowClientTest"/>
+        </classes>
+    </test>
+    <test name="Authorization code flow client test" enabled="true">
+        <classes>
+            <class name="org.ox.oxprox.client.AuthorizationCodeWSTest"/>
+        </classes>
+    </test>
+    <test name="Implicit flow client test" enabled="true">
+        <classes>
+            <class name="org.ox.oxprox.client.ImplicitFlowWsTest"/>
+        </classes>
+    </test>
+
+
+</suite>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module rename-to='model'>
+
+    <inherits name="com.google.common.collect.Collect"/>
+    <!-- Specify the paths for translatable code                    -->
+    <source path='gwt'/>
+
+</module>

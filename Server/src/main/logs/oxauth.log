@@ -1,0 +1,3 @@
+2014-05-08 16:50:45,858 INFO  [org.ox.oxprox.conf.ConfigurationFactory] LDAP configuration file location: U:\own\project\all\oxProx\trunk\src\main\conf\oxProx-ldap.properties
+2014-05-08 16:50:46,387 INFO  [org.ox.oxprox.guice.AppModule] Configuration file location: oxProx-config.json
+2014-05-08 16:50:48,888 WARN  [org.apache.http.client.protocol.ResponseProcessCookies] Cookie rejected: "[version: 0][name: JSESSIONID][value: 6FD6BE5CCCFB6AE9D4284AE478D46F4F][domain: seed.gluu.org][path: /oxauth][expiry: null]". Illegal path attribute "/oxauth". Path of origin: "/.well-known/openid-configuration"

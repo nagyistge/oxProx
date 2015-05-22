@@ -1,0 +1,18 @@
+{
+    "inum_prefix":"@!1111",
+    "discovery_script_dn":"inum=@!1111!BBBC!A79D.FC39,ou=script,ou=oxProx,o=@!1111,o=gluu",
+    "op_base_dn":"ou=op,ou=oxProx,o=@!1111,o=gluu",
+    "script_base_dn":"ou=script,ou=oxProx,o=@!1111,o=gluu",
+    "client_base_dn":"ou=client,ou=oxProx,o=@!1111,o=gluu",
+    "token_base_dn":"ou=token,ou=oxProx,o=@!1111,o=gluu",
+    "secure_cookie":false,
+    "redirect_endpoint":"https://seed.gluu.org/oxProx/redirect.xhtml",
+    "federation_op_base_dn":"ou=op,ou=federation,o=@!1111,o=gluu",
+    "discovery":{
+        "issuer":"http://localhost:8098/oxProx",
+        "authorization_path":"/rest/authorize",
+        "token_path":"/rest/token",
+        "userinfo_path":"/rest/userinfo",
+        "jwks_path":"/jwks"
+    }
+}

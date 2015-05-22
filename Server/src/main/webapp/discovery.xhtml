@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+<!---->
+<!--xmlns:composite="http://java.sun.com/jsf/composite"-->
+
+<head>
+
+    <meta http-equiv="content-type" content="text/html;charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <link rel="stylesheet" href="css/bootstrap.css" type="text/css"/>
+    <link rel="stylesheet" href="css/ui.css" type="text/css"/>
+    <link rel="stylesheet" href="css/jquery-ui-1.10.1.css" type="text/css"/>
+
+    <title>oxProxy - Discovery</title>
+</head>
+<body>
+    <br/>
+    <br/>
+
+    <div class="container">
+        <br/>
+        <br/>
+
+        <h2>
+            <h:outputText value="#{msg['discovery.welcome']}"/>
+        </h2>
+        <br/>
+        <h:dataTable value="#{discovery.opList}" var="op"
+                     styleClass="op-table"
+                     headerClass="op-table-header"
+                     rowClasses="op-table-odd-row,op-table-even-row">
+            <h:column>
+                <!-- column header -->
+                <f:facet name="header">
+                    <h:outputText value="#{msg['table.name']}"/>
+                </f:facet>
+                <!-- row record -->
+                #{op.displayName}
+                <h:outputText value="&#160;&#160;&#160;&#160;"/>
+            </h:column>
+            <h:column>
+                <f:facet name="header">
+                    <h:outputText value="#{msg['table.domain']}"/>
+                </f:facet>
+
+                #{op.domain}
+            </h:column>
+            <h:column>
+                <f:facet name="header">
+                    <h:outputText value="#{msg['table.discover']}"/>
+                </f:facet>
+
+                <a href="http://#{op.domain}/.well-known/openid-configuration" target="_blank">
+                    <h:outputText value="#{msg['table.value.visit']}"/>
+                </a>
+            </h:column>
+            <h:column>
+                <f:facet name="header">
+                    <h:outputText value="#{msg['table.login']}"/>
+                </f:facet>
+
+                <a href="#{request.contextPath}/rest/authorize?op_domain=#{op.domain}">
+                    <h:outputText value="#{msg['table.login']}"/>
+                </a>
+            </h:column>
+        </h:dataTable>
+        <br/>
+    </div>
+
+    <!-- Bootstrap core JavaScript -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="js/jquery-1.10.2.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+
+</body>
+</html>

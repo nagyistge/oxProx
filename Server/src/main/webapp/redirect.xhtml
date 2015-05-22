@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+        >
+<!---->
+<!--xmlns:composite="http://java.sun.com/jsf/composite"-->
+
+<head>
+
+    <meta http-equiv="content-type" content="text/html;charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <link rel="stylesheet" href="css/bootstrap.css" type="text/css"/>
+    <link rel="stylesheet" href="css/ui.css" type="text/css"/>
+    <link rel="stylesheet" href="css/jquery-ui-1.10.1.css" type="text/css"/>
+
+
+    <title>oxProxy</title>
+</head>
+<body>
+    <br/>
+
+    <div class="container">
+        <br/>
+
+        <h2>
+            <h:outputText value="#{msg['redirecting']}"/>
+        </h2>
+    </div>
+
+    <!-- Bootstrap core JavaScript -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="js/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $.ajax({
+                type:"POST",
+                url:"rest/redirect",
+                dataType:'text',
+                data:window.location.hash,
+                contentType:'text/plain',
+                mimeType:'text/plain',
+                success:function (data) {
+                    window.location.replace(data);
+                }
+            });
+        });
+
+    </script>
+</body>
+</html>
